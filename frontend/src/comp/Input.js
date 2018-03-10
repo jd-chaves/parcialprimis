@@ -27,6 +27,7 @@ export default class Input extends React.Component{
 	{	console.log(this.props);
 		return(
 			<div>
+			<label><strong>#</strong></label>
 				<input type="text" placeholder="Tag" value={this.props.valor} onChange={this.manejarCambioTag}/>
 				<button className="btn btn-info" type="button" onClick={this.manjearSubmit}>Buscar</button>
 			</div>

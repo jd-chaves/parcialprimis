@@ -94,7 +94,7 @@ componentDidMount() {
       <div className="card-body">
       <Input manjearSubmit={this.manjearSubmit}/>
        <Tags comunes = {this.state.comunes}/>
-       <History history = {this.state.historial}/>
+       <History history = {this.state.historial} manejoSubmit={this.manjearSubmit}/>
       </div>
       </div>
       );
