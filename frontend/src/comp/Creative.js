@@ -3,16 +3,6 @@ import React from "react";
 
 export default class Creative extends React.Component{
 
-	constructor(props)
-	{
-		super(props);
-		
-
-
-	}
-
-
-
 	render()
 	{	
 		const huffman = {
@@ -41,7 +31,7 @@ export default class Creative extends React.Component{
 			x:"001001010",
 			y:"110010",
 			z:"001001000"};
-		console.log(this.props.historial);
+		
 		var arr =this.props.historial; 
 		var a ="";
 		for(let p of arr)
@@ -58,7 +48,8 @@ export default class Creative extends React.Component{
 			}
 		}
 		return <div>
-			<p>b</p>
+			<h1>Y como no pude pensar en algo mejor...A continuacion estan los tags codificados usando {"Huffman Codes"} (para ingles)</h1>
+			<p>{b}</p>
 		</div>;
 	}
 }
