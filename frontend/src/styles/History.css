@@ -1,6 +1,5 @@
 #historial {
   list-style: none;
-  display: flex;
 }
 
 #historial > li {
