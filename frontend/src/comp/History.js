@@ -24,9 +24,9 @@ export default class History extends React.Component{
 
 		return(
 			<div>
-			<h2>
+				<h2>
 			Ultimos 10 tags buscados
-			</h2>
+				</h2>
 				<ul id="historial">
 					{el_historial.map((elemento, i) => {
 						return (
