@@ -16,6 +16,7 @@ export default class App extends React.Component {
     console.log(this.state.comunes);
     this.manjearSubmit = this.manjearSubmit.bind(this);
     this.decide = this.decide.bind(this);
+    this.mostrarHistoriaInicio = this.mostrarHistoriaInicio.bind(this);
   }
 
   manjearSubmit(hashtag) {
@@ -27,13 +28,18 @@ export default class App extends React.Component {
       }
       );
   });
-    fetch("/api/hashtags",{
+    fetch("/api/hashtags", {
       method: "POST",
       headers: {
         "Content-Type":"application/json"
       },
       body: JSON.stringify({hashtag})
-    });
+    }).then(()=>this.mostrarHistoriaInicio());
+    
+  }
+
+  mostrarHistoriaInicio()
+  {
     fetch("/api/hashtags")
       .then(res => res.json())
       .then(data => this.setState({historial: data}));
