@@ -38,11 +38,17 @@ export default class App extends React.Component {
     
   }
 
+componentDidMount() {
+    this.mostrarHistoriaInicio();
+  }
   mostrarHistoriaInicio()
   {
     fetch("/api/hashtags")
       .then(res => res.json())
-      .then(data => this.setState({historial: data}));
+      .then(data => {
+        console.log(data);
+        this.setState({historial: data});
+      });
   }
 
   decide(json)

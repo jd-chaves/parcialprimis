@@ -10,8 +10,7 @@ const assert = require("assert");
 const findDocuments = function(db, query, callback)
 {
 	const collection = db.collection("registros");
-	console.log("los datos son: "+collection.find(query));
-	collection.find(query).limit(10).toArray((err, docs) =>{
+	collection.find(query).sort({$natural: -1 }).limit(10).toArray((err, docs) =>{
 	assert.equal(err, null);
 	console.log("Found" + docs.length + " records");
 	callback(docs);
