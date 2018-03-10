@@ -1,6 +1,8 @@
 import React from "react";
 import Tags from "./Tag";
 import Input from "./Input";
+import History from "./History";
+
 var findHashtags = require("find-hashtags");
 
 
@@ -8,15 +10,16 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      comunes: []
+      comunes: [],
+      historial: []
     };
     console.log(this.state.comunes);
     this.manjearSubmit = this.manjearSubmit.bind(this);
     this.decide = this.decide.bind(this);
   }
 
-  manjearSubmit(tag) {
-    fetch(`https://www.instagram.com/explore/tags/${tag}/?__a=1`)
+  manjearSubmit(hashtag) {
+    fetch(`https://www.instagram.com/explore/tags/${hashtag}/?__a=1`)
     .then(res => res.json())
     .then(data => {this.setState(
       {
@@ -24,6 +27,16 @@ export default class App extends React.Component {
       }
       );
   });
+    fetch("api/hashtags",{
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({hashtag})
+    });
+    fetch("/api/hashtags")
+      .then(res => res.json())
+      .then(data => this.setState({historial: data}));
   }
 
   decide(json)
@@ -69,6 +82,7 @@ export default class App extends React.Component {
       <div className="card-body">
       <Input manjearSubmit={this.manjearSubmit}/>
        <Tags comunes = {this.state.comunes}/>
+       <History history = {this.state.historial}/>
       </div>
       </div>
       );

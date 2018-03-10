@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const tags = require("./hashtags");
+const hashtags = require("./hashtags");
 
-router.use("/tags", tags);
+router.use("/hashtags", hashtags);
 
 module.exports = router;
