@@ -10,6 +10,7 @@ const assert = require("assert");
 const findDocuments = function(db, query, callback)
 {
 	const collection = db.collection("registros");
+	console.log("los datos son: "+collection.find(query));
 	collection.find(query).limit(10).toArray((err, docs) =>{
 	assert.equal(err, null);
 	console.log("Found" + docs.length + " records");
@@ -23,9 +24,11 @@ function getHistory(query, callback)
 		assert.equal(null, err);
 		console.log("Connected succesfully to the server");
 		const db = client.db(dbName);  
-		client.close();
 
 		findDocuments(db, query, callback); 
+
+		client.close();
+
 	});
 }
 
