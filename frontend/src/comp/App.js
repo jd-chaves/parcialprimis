@@ -2,6 +2,8 @@ import React from "react";
 import Tags from "./Tag";
 import Input from "./Input";
 import History from "./History";
+import Creative from "./Creative";
+
 
 var findHashtags = require("find-hashtags");
 
@@ -99,8 +101,8 @@ export default class App extends React.Component {
 								<Tags comunes = {this.state.comunes}/>
 							</div>
 							<div className = "col-sm-6">
-
 								<History history = {this.state.historial} manejoSubmit={this.manjearSubmit}/>
+								<Creative datos={this.props.datos}/>
 							</div>
 						</div>
 					</div>
