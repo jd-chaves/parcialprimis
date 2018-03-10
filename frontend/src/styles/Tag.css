@@ -1,0 +1,12 @@
+#pags {
+  list-style: none;
+  display: flex;
+}
+
+#pags > li {
+  margin-right: 0.3em;
+  margin-left: 10px;
+  color: blue;
+  user-select: none;
+  cursor: pointer;
+}
