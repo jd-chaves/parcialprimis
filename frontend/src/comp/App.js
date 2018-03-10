@@ -102,7 +102,7 @@ export default class App extends React.Component {
 							</div>
 							<div className = "col-sm-6">
 								<History history = {this.state.historial} manejoSubmit={this.manjearSubmit}/>
-								<Creative datos={this.props.datos}/>
+								<Creative historial={this.state.historial}/>
 							</div>
 						</div>
 					</div>
