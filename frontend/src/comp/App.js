@@ -27,7 +27,7 @@ export default class App extends React.Component {
       }
       );
   });
-    fetch("api/hashtags",{
+    fetch("/api/hashtags",{
       method: "POST",
       headers: {
         "Content-Type":"application/json"
